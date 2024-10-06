@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('token')) {
+        alert('You are already logged in. Redirecting to the admin panel.');
+        window.location.href = 'admin-panel.html'; // Redirect to the admin panel
+    }
+});
 document.getElementById('registerForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
