@@ -21,9 +21,14 @@ header {
     background-color: #333;
     color: #fff;
     padding: 1rem;
-    text-align: center;
+    text-align: center; /* Default alignment */
     width: 100%;
     position: relative; /* Enable positioning for the button */
+}
+
+header h1 {
+    font-size: 2rem; /* Default size */
+    margin: 0;
 }
 
 .logout-button {
@@ -36,8 +41,7 @@ header {
     border-radius: 5px;
     position: absolute; /* Positioning the button */
     right: 20px; /* Align to the right */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for perfect centering */
+    top: 10px; /* Align closer to the top to avoid overlapping */
     transition: background-color 0.3s; /* Smooth transition */
 }
 
@@ -153,21 +157,32 @@ footer p {
     /* Adjust header styles */
     header {
         padding: 1rem;
+        text-align: left; /* Align text to the left for medium screens */
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Smaller heading size for medium screens */
     }
 
     .logout-button {
         font-size: 0.9rem; /* Smaller font size */
         padding: 8px 16px; /* Smaller padding */
-        right: 10px; /* Adjust right position */
-        top: 10px; /* Align it closer to the top */
+        right: 10px; /* Maintain top-right position */
+        top: 10px; /* Maintain top alignment */
+        transform: none; /* Remove vertical centering */
     }
 }
 
 @media (max-width: 480px) {
+    header h1 {
+        font-size: 1rem; /* Even smaller heading for very small screens */
+    }
+
     .logout-button {
-        font-size: 0.8rem; /* Even smaller font size */
-        padding: 6px 12px; /* Smaller padding */
-        right: 5px; /* Adjust right position */
-        top: 10px; /* Maintain top position */
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 8px 16px; /* Smaller padding */
+        right: 10px; /* Maintain top-right position */
+        top: 10px; /* Maintain top alignment */
+        transform: none; /* Remove vertical centering */
     }
 }
