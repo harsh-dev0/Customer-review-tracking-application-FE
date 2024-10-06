@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Widget Landing Page</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer src="scripts/header-footer.js"></script>
+</head>
+
+<div id="header-placeholder"></div>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Track Your Customer Reviews Effortlessly</h1>
+            <p>Discover the easiest way to collect and manage feedback from your customers. Grow your business by
+                understanding your audience better.</p>
+            <a href="#integration" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>Easy Integration</h3>
+                <p>Integrate our review widget on your website with just a few clicks.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Real-Time Feedback</h3>
+                <p>Receive customer reviews instantly and respond to them in real time.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Customizable</h3>
+                <p>Fully customizable review form to match your brand's style and voice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Section -->
+    <section id="signup" class="signup">
+        <h2>Sign Up Today</h2>
+        <p>Get started today and improve your customer experience with our easy-to-use review tracking system.</p>
+        <a href="register.html" class="signup-button">Sign Up Now</a>
+    </section>
+
+    <!-- Review Widget Integration Section -->
+    <section id="integration" class="integration">
+        <h2>Integrate the Customer Review Widget</h2>
+        <p>To get started with our Customer Review Widget, simply follow these steps:</p>
+        <ol>
+            <li>
+                <strong>Add the Script Tag:</strong>
+                <p>Include the following script tag in the <code>&lt;head&gt;</code> section of your HTML file to load the review widget:</p>
+                <pre><code>&lt;script src="https://customer-review-tracking-application-be.onrender.com/review-widget.js"&gt;&lt;/script&gt;</code></pre>
+            </li>
+            <li>
+                <strong>Customize the Widget:</strong>
+                <p>You can easily customize the appearance and functionality of the review widget by adding a configuration object in your JavaScript. Here’s an example:</p>
+                <pre><code>window.reviewWidgetConfig = {
+    bubbleColor: '#007BFF', // Color of the review bubble
+    bubbleTextColor: '#FFFFFF', // Text color inside the bubble
+    bubbleSize: '60px', // Size of the review bubble
+    popupBackgroundColor: '#FFFFFF', // Background color of the popup
+    popupBorderColor: '#ddd', // Border color of the popup
+    popupTextColor: '#000000', // Text color in the popup
+    reviewHeaderText: 'Customer Reviews', // Header text in the popup
+    noReviewsText: 'No reviews available.', // Message when no reviews are present
+    submitButtonText: 'Submit Review', // Text on the submit button
+    position: { // Position of the bubble
+        bottom: '20px',
+        right: '20px'
+    }
+};</code></pre>
+            </li>
+        </ol>
+        <p><strong>Important Note:</strong> To view reviews submitted through the widget, <strong>registration is required</strong>. Make sure users sign up on your platform to access and manage their reviews effectively.</p>
+    </section>
+
+    <!-- Review Widget -->
+    <div id="review-bubble">💬</div>
+    <div id="review-popup">
+        <p>Have questions? <strong>Contact us!</strong></p>
+        
+        <!-- Form for new reviews -->
+        <form id="review-form" no-validate>
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="email" id="email" placeholder="Your email" required>
+            <textarea id="review" rows="4" placeholder="Write your Message..." required></textarea>
+            <button type="submit" id="submit-button">Submit Message</button>
+        </form>
+
+        
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script defer src="scripts/script.js"></script>
+</body>
+
+</html>

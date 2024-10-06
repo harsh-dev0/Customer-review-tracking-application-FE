@@ -1,0 +1,445 @@
+/* Floating Button */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ddd;
+}
+
+#test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+       /* height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center; */
+
+
+    /* margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+#review-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden Review Popup */
+#review-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Popup Header */
+#review-popup h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Existing reviews */
+#review-list {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Review form */
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Set the color you want for the logo */
+    text-decoration: none !important; /* Remove underline */
+}
+
+.logo:hover {
+    color: #ff6347; /* Optional: Change color on hover if desired */
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-left: 2rem;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu ul li a:hover {
+    color: #ff6347;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff4500;
+}
+
+/* Features Section */
+.features {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.feature-item {
+    width: 30%;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+}
+
+/* Sign-Up Section */
+.signup {
+    padding: 3rem 1rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.signup h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.signup p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.signup-button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #111;
+}
+
+/* Contact Section */
+.contact {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust header styles */
+    header {
+        padding: 1rem;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu ul li {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Adjust hero section */
+    .hero {
+        padding: 3rem 1rem;
+        height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Features section */
+    .feature-item {
+        width: 90%; /* Full width for mobile */
+        margin: 0.5rem auto; /* Centered with margin */
+    }
+
+    /* Adjust signup and contact sections */
+    .signup,
+    .contact {
+        padding: 2rem 1rem;
+    }
+
+    .signup h2,
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .signup p,
+    .contact p {
+        font-size: 1rem;
+    }
+
+    /* Adjust button styles for mobile */
+    .cta-button,
+    .signup-button,
+    #contact-form button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+    }
+}
+/* Integration Section */
+.integration {
+    padding: 2rem 1rem;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center;
+}
+
+.integration h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.integration p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem; /* Slightly larger for better readability */
+}
+
+.integration ol {
+    text-align: left; /* Align text to the left for better readability */
+    max-width: 600px; /* Limit width for better visual balance */
+    margin: 0 auto; /* Center the list */
+    padding: 0; /* Remove padding */
+}
+
+.integration li {
+    margin-bottom: 1.5rem; /* Space between list items */
+}
+
+.integration pre {
+    background-color: #eaeaea; /* Light grey background for code blocks */
+    padding: 0.5rem;
+    border-radius: 4px; /* Rounded corners for aesthetics */
+    overflow-x: auto; /* Allow horizontal scroll for long lines */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .integration h2 {
+        font-size: 1.5rem; /* Smaller font size on mobile */
+    }
+
+    .integration p, .integration li {
+        font-size: 1rem; /* Standardize font size */
+    }
+
+    .integration ol {
+        padding-left: 1.5rem; /* Indent list items on mobile */
+    }
+
+    .feature-item {
+        width: 100%; /* Stack features vertically on smaller screens */
+        margin-bottom: 1rem; /* Add margin at the bottom */
+    }
+}
