@@ -16,7 +16,7 @@ function loadHeader() {
                 <div class="menu">
                     <ul>
                         ${isHomePage ? '<li><a href="#features">Features</a></li>' : ''} <!-- Show only if not homepage -->
-                        ${!isLoggedIn ? '<li><a href="register.html">Sign Up</a></li>' : ''} <!-- Show only if not logged in -->
+                        ${!isLoggedIn ? '<li><a href="register.html">Sign Up</a></li>' : '<li><a href="admin-panel.html">Admin Panel</a></li>'} <!-- Show only if not logged in -->
                     </ul>
                 </div>
             </nav>
